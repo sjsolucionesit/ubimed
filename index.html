@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Ubimed</title>
+</head>
+<body>
+    <button onclick="getToken()">Autenticar</button>
+    <input id="email" type="text" name="email" placeholder="Email">
+    <input id="password" type="password" name="password" placeholder="Password">
+    <button onclick="enviarDatosLogin()">Enviar</button>
+    <script>
+        let tokenApi = '';
+
+        async function getToken(){
+        const api = {
+            apiSecret: 'Crooked13*UbimedServices*devDanielMateus'
+        };
+        
+        const getToken = await fetch('http://localhost:3000/login/auth', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(api)
+        });
+
+        const tokenInfo = await getToken.json();
+
+        tokenApi = tokenInfo.token;
+    
+        console.log(tokenInfo);
+        }
+
+        async function enviarDatosLogin(){
+            const data = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            }
+            fetch('http://localhost:3000/login/signup', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'x-access-token': tokenApi
+                },
+                body: JSON.stringify(data)
+            }).then(
+                result => {
+                    console.log(result);
+                }
+            ).catch(
+                err => {
+                    console.log(err);
+                }
+            );
+        }
+    </script>
+</body>
+</html>

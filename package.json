@@ -1,0 +1,35 @@
+{
+  "name": "orquestadorubimed",
+  "version": "1.0.0",
+  "description": "orquestador de microservicios para ubimed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/porrocas/orquestadorUbimed.git"
+  },
+  "author": "Daniel Mateus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/porrocas/orquestadorUbimed/issues"
+  },
+  "homepage": "https://github.com/porrocas/orquestadorUbimed#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "html-pdf": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "resize-optimize-images": "^1.1.0",
+    "uniqid": "^5.2.0"
+  }
+}
