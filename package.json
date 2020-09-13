@@ -26,7 +26,7 @@
     "html-pdf": "^2.2.0",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "resize-optimize-images": "^1.1.0",
